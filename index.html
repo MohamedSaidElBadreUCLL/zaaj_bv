@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuinafsluitingen - Zaaj BV</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="paysagiste.png" alt=" Afsluitingen Logo" class="logo-image">
+                <span>Clôtures de jardin</span>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link" data-fr="Accueil" data-nl="Home">Accueil</a></li>
+                <li><a href="#services" class="nav-link" data-fr="Services" data-nl="Diensten">Services</a></li>
+                <li><a href="#gallery" class="nav-link" data-fr="Galerie" data-nl="Galerij">Galerie</a></li>
+                <li><a href="#contact" class="nav-link" data-fr="Contact" data-nl="Contact">Contact</a></li>
+            </ul>
+
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <button class="lang-toggle" onclick="toggleLanguage()" id="langToggle">NL</button>
+                <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="lang-content active" data-lang="fr">
+                    <h1>Clôtures de jardin</h1>
+                    <p>Spécialiste en clôtures de jardin🌿</p>
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/32467832151" class="btn">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="mailto:[email protected]" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                        <a href="https://www.instagram.com/versierdetuinen" class="btn btn-secondary" target="_blank">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                        <a href="https://www.facebook.com/versierdetuinen.zaaj" class="btn btn-secondary" target="_blank">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                        <a href="https://www.tiktok.com/@tuinrenovatie1" class="btn btn-secondary">
+                            <i class="fab fa-tiktok"></i> TikTok
+                        </a>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="nl">
+                    <h1>Tuinafsluitingen</h1>
+                    <p>Specialist in tuinafsluitingen🌿</p>
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/32467832151" class="btn">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="mailto:[email protected]" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                        <a href="https://www.instagram.com/versierdetuinen" class="btn btn-secondary" target="_blank">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                        <a href="https://www.facebook.com/versierdetuinen.zaaj" class="btn btn-secondary" target="_blank">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                        <a href="https://www.tiktok.com/@tuinrenovatie1" class="btn btn-secondary">
+                            <i class="fab fa-tiktok"></i> TikTok
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="lang-content active" data-lang="fr">
+                <h2>Nos Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Clôtures & Aménagements</h3>
+                        <ul>
+                            <li>Pose de clôtures solides en béton</li>
+                            <li>Clôtures esthétiques en bois</li>
+                            <li>Installation professionnelle</li>
+                            <li>Devis gratuit et personnalisé</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <h3>Gazon & Espaces Verts</h3>
+                        <ul>
+                            <li>Installation de gazon naturel en rouleaux</li>
+                            <li>Préparation du terrain</li>
+                            <li>Système d'arrosage</li>
+                            <li>Entretien et conseils</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <h3>Terrasses & Pavage</h3>
+                        <ul>
+                            <li>Création de terrasses modernes</li>
+                            <li>Matériaux durables et esthétiques</li>
+                            <li>Design personnalisé</li>
+                            <li>Finitions de qualité</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="availability-text">
+                    <p>Disponible dans toute la Belgique</p>
+                </div>
+            </div>
+
+            <div class="lang-content" data-lang="nl">
+                <h2>Onze Diensten</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Omheiningen & Aanleg</h3>
+                        <ul>
+                            <li>Plaatsing van stevige betonnen omheiningen</li>
+                            <li>Esthetische houten omheiningen</li>
+                            <li>Professionele installatie</li>
+                            <li>Gratis en gepersonaliseerde offerte</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <h3>Gazon & Groene Ruimtes</h3>
+                        <ul>
+                            <li>Installatie van natuurlijk grasmatten</li>
+                            <li>Grondvoorbereiding</li>
+                            <li>Irrigatiesysteem</li>
+                            <li>Onderhoud en advies</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <h3>Terrassen & Verharding</h3>
+                        <ul>
+                            <li>Creatie van moderne terrassen</li>
+                            <li>Duurzame en esthetische materialen</li>
+                            <li>Gepersonaliseerd ontwerp</li>
+                            <li>Kwaliteitsafwerking</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="availability-text">
+                    <p>Beschikbaar in heel België</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" style="background: white;">
+        <div class="container">
+            <div class="lang-content active" data-lang="fr">
+                <h2>Galerie</h2>
+                
+                <!-- Carousel Container -->
+                <div class="carousel-container">
+                    <button class="carousel-btn carousel-btn-prev" onclick="prevSlide()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="carousel-wrapper">
+                        <div class="carousel-track" id="carouselTrack">
+                            <div class="carousel-slide active">
+                                <img src="image_1.jpg" alt="Projet 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_2.jpg" alt="Projet 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_3.jpg" alt="Projet 3">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_4.jpg" alt="Projet 4">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_5.jpg" alt="Projet 5">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_6.jpg" alt="Projet 6">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_7.jpg" alt="Projet 7">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_8.jpg" alt="Projet 8">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_9.jpg" alt="Projet 9">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_10.jpg" alt="Projet 10">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_11.jpg" alt="Projet 11">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_12.jpg" alt="Projet 12">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_13.jpg" alt="Projet 13">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_14.jpg" alt="Projet 14">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_15.jpg" alt="Projet 15">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_16.jpg" alt="Projet 16">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_17.jpg" alt="Projet 17">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_18.jpg" alt="Projet 18">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-btn carousel-btn-next" onclick="nextSlide()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators" id="carouselIndicators">
+                    <span class="indicator active" onclick="goToSlide(0)"></span>
+                    <span class="indicator" onclick="goToSlide(1)"></span>
+                    <span class="indicator" onclick="goToSlide(2)"></span>
+                    <span class="indicator" onclick="goToSlide(3)"></span>
+                    <span class="indicator" onclick="goToSlide(4)"></span>
+                    <span class="indicator" onclick="goToSlide(5)"></span>
+                    <span class="indicator" onclick="goToSlide(6)"></span>
+                    <span class="indicator" onclick="goToSlide(7)"></span>
+                    <span class="indicator" onclick="goToSlide(8)"></span>
+                    <span class="indicator" onclick="goToSlide(9)"></span>
+                    <span class="indicator" onclick="goToSlide(10)"></span>
+                    <span class="indicator" onclick="goToSlide(11)"></span>
+                    <span class="indicator" onclick="goToSlide(12)"></span>
+                    <span class="indicator" onclick="goToSlide(13)"></span>
+                    <span class="indicator" onclick="goToSlide(14)"></span>
+                    <span class="indicator" onclick="goToSlide(15)"></span>
+                    <span class="indicator" onclick="goToSlide(16)"></span>
+                    <span class="indicator" onclick="goToSlide(17)"></span>
+                </div>
+            </div>
+
+            <div class="lang-content" data-lang="nl">
+                <h2>Galerij</h2>
+                
+                <!-- Carousel Container -->
+                <div class="carousel-container">
+                    <button class="carousel-btn carousel-btn-prev" onclick="prevSlide()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="carousel-wrapper">
+                        <div class="carousel-track" id="carouselTrackNL">
+                            <div class="carousel-slide active">
+                                <img src="image_1.jpg" alt="Project 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_2.jpg" alt="Project 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_3.jpg" alt="Project 3">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_4.jpg" alt="Project 4">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_5.jpg" alt="Project 5">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_6.jpg" alt="Project 6">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_7.jpg" alt="Project 7">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_8.jpg" alt="Project 8">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_9.jpg" alt="Project 9">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_10.jpg" alt="Project 10">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_11.jpg" alt="Project 11">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_12.jpg" alt="Project 12">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_13.jpg" alt="Project 13">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_14.jpg" alt="Project 14">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_15.jpg" alt="Project 15">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_16.jpg" alt="Project 16">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_17.jpg" alt="Project 17">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="image_18.jpg" alt="Project 18">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-btn carousel-btn-next" onclick="nextSlide()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators" id="carouselIndicatorsNL">
+                    <span class="indicator active" onclick="goToSlide(0)"></span>
+                    <span class="indicator" onclick="goToSlide(1)"></span>
+                    <span class="indicator" onclick="goToSlide(2)"></span>
+                    <span class="indicator" onclick="goToSlide(3)"></span>
+                    <span class="indicator" onclick="goToSlide(4)"></span>
+                    <span class="indicator" onclick="goToSlide(5)"></span>
+                    <span class="indicator" onclick="goToSlide(6)"></span>
+                    <span class="indicator" onclick="goToSlide(7)"></span>
+                    <span class="indicator" onclick="goToSlide(8)"></span>
+                    <span class="indicator" onclick="goToSlide(9)"></span>
+                    <span class="indicator" onclick="goToSlide(10)"></span>
+                    <span class="indicator" onclick="goToSlide(11)"></span>
+                    <span class="indicator" onclick="goToSlide(12)"></span>
+                    <span class="indicator" onclick="goToSlide(13)"></span>
+                    <span class="indicator" onclick="goToSlide(14)"></span>
+                    <span class="indicator" onclick="goToSlide(15)"></span>
+                    <span class="indicator" onclick="goToSlide(16)"></span>
+                    <span class="indicator" onclick="goToSlide(17)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="lang-content active" data-lang="fr">
+                <h2>Demande de Devis</h2>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Prénom *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Nom *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Téléphone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="language">Langue préférée</label>
+                            <select id="language" name="language">
+                                <option value="français">Français</option>
+                                <option value="nederlands">Nederlands</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="meters">Longueur de clôture (mètres linéaires) *</label>
+                            <input type="number" id="meters" name="meters" placeholder="ex: 15" min="1" oninput="calculatePrice('fr')">
+                        </div>
+                        
+                        <div class="price-display" id="priceDisplayFR" style="display: none;">
+                            <div class="price-box">
+                                <h3>Prix estimé</h3>
+                                <p class="price-amount" id="priceAmountFR">€0</p>
+                                <p class="price-details" id="priceDetailsFR"></p>
+                                <p class="price-note">*Prix indicatif - Un devis détaillé sera fourni après inspection</p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description">Description des travaux souhaités *</label>
+                            <textarea id="description" name="description" placeholder="Décrivez votre projet en détail..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Envoyer la demande</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="lang-content" data-lang="nl">
+                <h2>Offerte Aanvraag</h2>
+                <div class="contact-form">
+                    <form id="contactFormNL">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstNameNL">Voornaam *</label>
+                                <input type="text" id="firstNameNL" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastNameNL">Achternaam *</label>
+                                <input type="text" id="lastNameNL" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phoneNL">Telefoonnummer *</label>
+                            <input type="tel" id="phoneNL" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="languageNL">Voorkeurstaal</label>
+                            <select id="languageNL" name="language">
+                                <option value="nederlands">Nederlands</option>
+                                <option value="français">Français</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="metersNL">Lengte van omheining (strekkende meters) *</label>
+                            <input type="number" id="metersNL" name="meters" placeholder="bijv: 15" min="1" oninput="calculatePrice('nl')">
+                        </div>
+                        
+                        <div class="price-display" id="priceDisplayNL" style="display: none;">
+                            <div class="price-box">
+                                <h3>Geschatte prijs</h3>
+                                <p class="price-amount" id="priceAmountNL">€0</p>
+                                <p class="price-details" id="priceDetailsNL"></p>
+                                <p class="price-note">*Indicatieve prijs - Een gedetailleerde offerte wordt verstrekt na inspectie</p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="descriptionNL">Beschrijving van gewenste werkzaamheden *</label>
+                            <textarea id="descriptionNL" name="description" placeholder="Beschrijf uw project in detail..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Aanvraag versturen</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <div class="lang-content active" data-lang="fr">
+                        <h3>Contact</h3>
+                        <p><i class="fab fa-whatsapp"></i> WhatsApp: +32 467 83 21 51</p>
+                        <p><i class="fas fa-envelope"></i> Email: zaaj@gmail.com</p>
+                        <p>📍 Nous proposons nos services dans toute la Belgique.</p>
+                    </div>
+                    <div class="lang-content" data-lang="nl">
+                        <h3>Contact</h3>
+                        <p><i class="fab fa-whatsapp"></i> WhatsApp: +32 467 83 21 51</p>
+                        <p><i class="fas fa-envelope"></i> Email: zaaj@gmail.com</p>
+                        <p>📍 Wij bieden onze diensten aan in heel België.</p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div class="lang-content active" data-lang="fr">
+                        <h3>Suivez-nous</h3>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/versierdetuinen" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.facebook.com/versierdetuinen.zaaj" target="_blank">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </a>
+                            <a href="https://www.tiktok.com/@tuinrenovatie1" target="_blank">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lang-content" data-lang="nl">
+                        <h3>Volg ons</h3>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/versierdetuinen" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.facebook.com/versierdetuinen.zaaj" target="_blank">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </a>
+                            <a href="https://www.tiktok.com/@tuinrenovatie1" target="_blank">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lang-content active" data-lang="fr">
+                <p>&copy; 2025 Clôtures de jardin Zaaj. Tous droits réservés.</p>
+            </div>
+            <div class="lang-content" data-lang="nl">
+                <p>&copy; 2025 Tuinafsluitingen Zaaj. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
