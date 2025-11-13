@@ -151,36 +151,23 @@ function startCarouselAutoplay() {
 
 // Form submission handling
 function handleFormSubmit(e, formId) {
-    e.preventDefault();
+    // Don't prevent default - let form submit to FormSubmit.co
     
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
     
-    // Add timestamp and language
-    data.timestamp = new Date().toISOString();
-    data.formLanguage = currentLang;
-    
-    // Store in browser's memory (you can modify this to send to a server)
+    // Store in localStorage for backup
     const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
-    submissions.push(data);
+    submissions.push({
+        ...data,
+        timestamp: new Date().toISOString(),
+        formLanguage: currentLang
+    });
     localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
     
-    // Show success message
-    const successMessage = currentLang === 'fr' 
-        ? 'Merci ! Votre demande a été envoyée. Nous vous contactons bientôt.'
-        : 'Bedankt! Uw aanvraag is verzonden. We nemen binnenkort contact op.';
-    
-    alert(successMessage);
-    
-    // Reset form and price display
-    e.target.reset();
-    if (currentLang === 'fr') {
-        document.getElementById('priceDisplayFR').style.display = 'none';
-    } else {
-        document.getElementById('priceDisplayNL').style.display = 'none';
-    }
-    
     console.log('Form submitted:', data);
+    
+    // Form will submit naturally to FormSubmit.co
 }
 
 // Add event listeners when DOM is loaded
