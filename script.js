@@ -1,4 +1,4 @@
-let currentLang = 'fr';
+let currentLang = 'nl';
 let currentSlide = 0;
 
 // Language toggle functionality
@@ -39,7 +39,8 @@ function setLanguage(lang) {
 }
 
 // Mobile menu functionality
-function toggleMobileMenu() {
+function toggleMobileMenu(e) {
+    if (e) e.stopPropagation();
     const navLinks = document.getElementById('navLinks');
     navLinks.classList.toggle('mobile-open');
 }
@@ -63,17 +64,16 @@ function calculatePrice(lang) {
     
     if (meters >= 10 && meters <= 15) {
         pricePerMeter = 130;
-        priceRange = lang === 'fr' ? '10-15m' : '10-15m';
+        priceRange = '10-15m';
     } else if (meters >= 16 && meters <= 19) {
         pricePerMeter = 120;
-        priceRange = lang === 'fr' ? '16-19m' : '16-19m';
+        priceRange = '16-19m';
     } else if (meters >= 20) {
         pricePerMeter = 99;
-        priceRange = lang === 'fr' ? '20m+' : '20m+';
+        priceRange = '20m+';
     } else {
-        // Less than 10 meters - show message
         priceDisplay.style.display = 'block';
-        priceAmount.textContent = lang === 'fr' ? 'Minimum 10m' : 'Minimum 10m';
+        priceAmount.textContent = 'Minimum 10m';
         priceDetails.textContent = lang === 'fr' 
             ? 'Notre service commence à partir de 10 mètres linéaires' 
             : 'Onze service begint vanaf 10 strekkende meters';
@@ -146,17 +146,14 @@ function goToSlide(slideIndex) {
 function startCarouselAutoplay() {
     setInterval(() => {
         nextSlide();
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
 }
 
 // Form submission handling
 function handleFormSubmit(e, formId) {
-    // Don't prevent default - let form submit to FormSubmit.co
-    
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
     
-    // Store in localStorage for backup
     const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
     submissions.push({
         ...data,
@@ -166,12 +163,24 @@ function handleFormSubmit(e, formId) {
     localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
     
     console.log('Form submitted:', data);
-    
-    // Form will submit naturally to FormSubmit.co
+}
+
+// Auto-update copyright year
+function updateCopyrightYear() {
+    const year = new Date().getFullYear();
+    document.querySelectorAll('.copyright-year').forEach(el => {
+        el.textContent = year;
+    });
 }
 
 // Add event listeners when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Set default language to Dutch
+    setLanguage('nl');
+    
+    // Update copyright year
+    updateCopyrightYear();
+    
     // Form submissions
     const contactForm = document.getElementById('contactForm');
     const contactFormNL = document.getElementById('contactFormNL');
@@ -207,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start carousel autoplay
     startCarouselAutoplay();
     
-    // Add keyboard navigation for carousel
+    // Keyboard navigation
     document.addEventListener('keydown', function(e) {
         if (e.key === 'ArrowLeft') {
             prevSlide();
@@ -216,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Add touch/swipe support for carousel
+    // Touch/swipe support
     let touchStartX = 0;
     let touchEndX = 0;
     

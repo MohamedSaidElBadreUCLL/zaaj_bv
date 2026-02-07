@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" fill="none">
+  <!-- Fence pickets with pointed tops -->
+  <!-- Picket 1 -->
+  <path d="M12 28L18 18L24 28V75H12V28Z" fill="#7ECDA0" stroke="#7ECDA0" stroke-width="1" stroke-linejoin="round"/>
+  <!-- Picket 2 -->
+  <path d="M30 28L36 18L42 28V75H30V28Z" fill="#7ECDA0" stroke="#7ECDA0" stroke-width="1" stroke-linejoin="round"/>
+  <!-- Picket 3 -->
+  <path d="M48 28L54 18L60 28V75H48V28Z" fill="#7ECDA0" stroke="#7ECDA0" stroke-width="1" stroke-linejoin="round"/>
+  <!-- Picket 4 -->
+  <path d="M66 28L72 18L78 28V75H66V28Z" fill="#7ECDA0" stroke="#7ECDA0" stroke-width="1" stroke-linejoin="round"/>
+  <!-- Picket 5 -->
+  <path d="M84 28L90 18L96 28V75H84V28Z" fill="#7ECDA0" stroke="#7ECDA0" stroke-width="1" stroke-linejoin="round"/>
+  
+  <!-- Horizontal rails -->
+  <rect x="8" y="38" width="92" height="6" rx="1" fill="#7ECDA0"/>
+  <rect x="8" y="58" width="92" height="6" rx="1" fill="#7ECDA0"/>
+  
+  <!-- Decorative arch tops connecting pickets -->
+  <path d="M24 30 Q27 24 30 30" stroke="#7ECDA0" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M42 30 Q45 24 48 30" stroke="#7ECDA0" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M60 30 Q63 24 66 30" stroke="#7ECDA0" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M78 30 Q81 24 84 30" stroke="#7ECDA0" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>
