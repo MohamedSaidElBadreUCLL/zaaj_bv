@@ -1,67 +1,63 @@
-let currentLang = 'nl';
-let currentSlide = 0;
+var currentLang = 'nl';
+var currentSlide = 0;
 
-// Language toggle functionality
 function toggleLanguage() {
-    const newLang = currentLang === 'fr' ? 'nl' : 'fr';
+    var newLang = currentLang === 'fr' ? 'nl' : 'fr';
     setLanguage(newLang);
 }
 
 function setLanguage(lang) {
     currentLang = lang;
-    
-    // Hide all language content
-    document.querySelectorAll('.lang-content').forEach(el => {
-        el.classList.remove('active');
-    });
-    
-    // Show content for selected language
-    document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
-        el.classList.add('active');
-    });
-    
-    // Update language toggle button
-    const langToggle = document.getElementById('langToggle');
-    langToggle.textContent = lang === 'fr' ? 'NL' : 'FR';
-    
-    // Update navigation links
-    document.querySelectorAll('.nav-link').forEach(link => {
-        const text = link.getAttribute(`data-${lang}`);
-        if (text) link.textContent = text;
-    });
-    
-    // Update page language attribute
+
+    var allLang = document.querySelectorAll('.lang-content');
+    for (var i = 0; i < allLang.length; i++) {
+        allLang[i].classList.remove('active');
+    }
+
+    var activeLang = document.querySelectorAll('[data-lang="' + lang + '"]');
+    for (var i = 0; i < activeLang.length; i++) {
+        activeLang[i].classList.add('active');
+    }
+
+    var langToggle = document.getElementById('langToggle');
+    if (langToggle) {
+        langToggle.textContent = lang === 'fr' ? 'NL' : 'FR';
+    }
+
+    var navLinks = document.querySelectorAll('.nav-link');
+    for (var i = 0; i < navLinks.length; i++) {
+        var text = navLinks[i].getAttribute('data-' + lang);
+        if (text) navLinks[i].textContent = text;
+    }
+
     document.documentElement.lang = lang;
-    
-    // Reset carousel to first slide when language changes
     currentSlide = 0;
     updateCarousel();
 }
 
-// Mobile menu functionality
-function toggleMobileMenu(e) {
-    if (e) e.stopPropagation();
-    const navLinks = document.getElementById('navLinks');
-    navLinks.classList.toggle('mobile-open');
+function toggleMobileMenu() {
+    var navLinks = document.getElementById('navLinks');
+    if (navLinks) {
+        navLinks.classList.toggle('mobile-open');
+    }
 }
 
-// Price Calculator functionality
 function calculatePrice(lang) {
-    const metersInput = lang === 'fr' ? document.getElementById('meters') : document.getElementById('metersNL');
-    const priceDisplay = lang === 'fr' ? document.getElementById('priceDisplayFR') : document.getElementById('priceDisplayNL');
-    const priceAmount = lang === 'fr' ? document.getElementById('priceAmountFR') : document.getElementById('priceAmountNL');
-    const priceDetails = lang === 'fr' ? document.getElementById('priceDetailsFR') : document.getElementById('priceDetailsNL');
-    
-    const meters = parseFloat(metersInput.value);
-    
+    var metersInput = lang === 'fr' ? document.getElementById('meters') : document.getElementById('metersNL');
+    var priceDisplay = lang === 'fr' ? document.getElementById('priceDisplayFR') : document.getElementById('priceDisplayNL');
+    var priceAmount = lang === 'fr' ? document.getElementById('priceAmountFR') : document.getElementById('priceAmountNL');
+    var priceDetails = lang === 'fr' ? document.getElementById('priceDetailsFR') : document.getElementById('priceDetailsNL');
+
+    var meters = parseFloat(metersInput.value);
+
     if (isNaN(meters) || meters < 1) {
         priceDisplay.style.display = 'none';
         return;
     }
-    
-    let pricePerMeter;
-    let priceRange;
-    
+
+    var pricePerMeter;
+    var priceRange;
+
     if (meters >= 10 && meters <= 15) {
         pricePerMeter = 130;
         priceRange = '10-15m';
@@ -74,64 +70,69 @@ function calculatePrice(lang) {
     } else {
         priceDisplay.style.display = 'block';
         priceAmount.textContent = 'Minimum 10m';
-        priceDetails.textContent = lang === 'fr' 
-            ? 'Notre service commence à partir de 10 mètres linéaires' 
+        priceDetails.textContent = lang === 'fr'
+            ? 'Notre service commence \u00e0 partir de 10 m\u00e8tres lin\u00e9aires'
             : 'Onze service begint vanaf 10 strekkende meters';
         return;
     }
-    
-    const totalPrice = meters * pricePerMeter;
-    
+
+    var totalPrice = meters * pricePerMeter;
+
     priceDisplay.style.display = 'block';
-    priceAmount.textContent = `€${totalPrice.toLocaleString('fr-BE')}`;
-    
+    priceAmount.textContent = '\u20ac' + totalPrice.toLocaleString('fr-BE');
+
     if (lang === 'fr') {
-        priceDetails.textContent = `${meters}m × €${pricePerMeter}/m (tranche ${priceRange})`;
+        priceDetails.textContent = meters + 'm \u00d7 \u20ac' + pricePerMeter + '/m (tranche ' + priceRange + ')';
     } else {
-        priceDetails.textContent = `${meters}m × €${pricePerMeter}/m (bereik ${priceRange})`;
+        priceDetails.textContent = meters + 'm \u00d7 \u20ac' + pricePerMeter + '/m (bereik ' + priceRange + ')';
     }
 }
 
-// Carousel functionality
 function updateCarousel() {
-    const trackId = currentLang === 'fr' ? 'carouselTrack' : 'carouselTrackNL';
-    const indicatorsId = currentLang === 'fr' ? 'carouselIndicators' : 'carouselIndicatorsNL';
-    
-    const track = document.getElementById(trackId);
-    const indicators = document.getElementById(indicatorsId);
-    
+    var trackId = currentLang === 'fr' ? 'carouselTrack' : 'carouselTrackNL';
+    var indicatorsId = currentLang === 'fr' ? 'carouselIndicators' : 'carouselIndicatorsNL';
+
+    var track = document.getElementById(trackId);
+    var indicators = document.getElementById(indicatorsId);
+
     if (track) {
-        const slides = track.querySelectorAll('.carousel-slide');
-        slides.forEach((slide, index) => {
-            slide.classList.toggle('active', index === currentSlide);
-        });
+        var slides = track.querySelectorAll('.carousel-slide');
+        for (var i = 0; i < slides.length; i++) {
+            if (i === currentSlide) {
+                slides[i].classList.add('active');
+            } else {
+                slides[i].classList.remove('active');
+            }
+        }
     }
-    
+
     if (indicators) {
-        const dots = indicators.querySelectorAll('.indicator');
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentSlide);
-        });
+        var dots = indicators.querySelectorAll('.indicator');
+        for (var i = 0; i < dots.length; i++) {
+            if (i === currentSlide) {
+                dots[i].classList.add('active');
+            } else {
+                dots[i].classList.remove('active');
+            }
+        }
     }
 }
 
 function nextSlide() {
-    const trackId = currentLang === 'fr' ? 'carouselTrack' : 'carouselTrackNL';
-    const track = document.getElementById(trackId);
-    
+    var trackId = currentLang === 'fr' ? 'carouselTrack' : 'carouselTrackNL';
+    var track = document.getElementById(trackId);
     if (track) {
-        const slides = track.querySelectorAll('.carousel-slide');
+        var slides = track.querySelectorAll('.carousel-slide');
         currentSlide = (currentSlide + 1) % slides.length;
         updateCarousel();
     }
 }
 
 function prevSlide() {
-    const trackId = currentLang === 'fr' ? 'carouselTrack' : 'carouselTrackNL';
-    const track = document.getElementById(trackId);
-    
+    var trackId = currentLang === 'fr' ? 'carouselTrack' : 'carouselTrackNL';
+    var track = document.getElementById(trackId);
     if (track) {
-        const slides = track.querySelectorAll('.carousel-slide');
+        var slides = track.querySelectorAll('.carousel-slide');
         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         updateCarousel();
     }
@@ -142,121 +143,70 @@ function goToSlide(slideIndex) {
     updateCarousel();
 }
 
-// Auto-play carousel
-function startCarouselAutoplay() {
-    setInterval(() => {
-        nextSlide();
-    }, 5000);
-}
-
-// Form submission handling
-function handleFormSubmit(e, formId) {
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-    
-    const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
-    submissions.push({
-        ...data,
-        timestamp: new Date().toISOString(),
-        formLanguage: currentLang
-    });
-    localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
-    
-    console.log('Form submitted:', data);
-}
-
-// Auto-update copyright year
-function updateCopyrightYear() {
-    const year = new Date().getFullYear();
-    document.querySelectorAll('.copyright-year').forEach(el => {
-        el.textContent = year;
-    });
-}
-
-// Add event listeners when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Set default language to Dutch
     setLanguage('nl');
-    
-    // Update copyright year
-    updateCopyrightYear();
-    
-    // Form submissions
-    const contactForm = document.getElementById('contactForm');
-    const contactFormNL = document.getElementById('contactFormNL');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => handleFormSubmit(e, 'contactForm'));
+
+    // Copyright year
+    var yearEls = document.querySelectorAll('.copyright-year');
+    var year = new Date().getFullYear();
+    for (var i = 0; i < yearEls.length; i++) {
+        yearEls[i].textContent = year;
     }
-    
-    if (contactFormNL) {
-        contactFormNL.addEventListener('submit', (e) => handleFormSubmit(e, 'contactFormNL'));
-    }
-    
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-            
-            // Close mobile menu if open
-            document.getElementById('navLinks').classList.remove('mobile-open');
-        });
-    });
-    
-    // Initialize carousel
+
+    // Carousel autoplay
     updateCarousel();
-    
-    // Start carousel autoplay
-    startCarouselAutoplay();
-    
-    // Keyboard navigation
+    setInterval(nextSlide, 5000);
+
+    // Smooth scroll for nav links only
+    var navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+    for (var i = 0; i < navAnchors.length; i++) {
+        navAnchors[i].addEventListener('click', function(e) {
+            e.preventDefault();
+            var targetEl = document.querySelector(this.getAttribute('href'));
+            if (targetEl) {
+                targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            var navLinks = document.getElementById('navLinks');
+            if (navLinks) navLinks.classList.remove('mobile-open');
+        });
+    }
+
+    // Logo smooth scroll
+    var logoLink = document.querySelector('.logo-link');
+    if (logoLink) {
+        logoLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // Keyboard nav for carousel
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowLeft') {
-            prevSlide();
-        } else if (e.key === 'ArrowRight') {
-            nextSlide();
-        }
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
     });
-    
-    // Touch/swipe support
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    const carouselWrapper = document.querySelector('.carousel-wrapper');
+
+    // Touch swipe for carousel
+    var touchStartX = 0;
+    var carouselWrapper = document.querySelector('.carousel-wrapper');
     if (carouselWrapper) {
         carouselWrapper.addEventListener('touchstart', function(e) {
             touchStartX = e.changedTouches[0].screenX;
         });
-        
         carouselWrapper.addEventListener('touchend', function(e) {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
+            var touchEndX = e.changedTouches[0].screenX;
+            if (touchEndX < touchStartX - 50) nextSlide();
+            if (touchEndX > touchStartX + 50) prevSlide();
         });
     }
-    
-    function handleSwipe() {
-        if (touchEndX < touchStartX - 50) {
-            nextSlide();
-        }
-        if (touchEndX > touchStartX + 50) {
-            prevSlide();
-        }
-    }
-});
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', function(e) {
-    const nav = document.querySelector('nav');
-    const navLinks = document.getElementById('navLinks');
-    
-    if (!nav.contains(e.target)) {
-        navLinks.classList.remove('mobile-open');
-    }
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        var nav = document.querySelector('nav');
+        var mobileMenu = document.querySelector('.mobile-menu');
+        var navLinks = document.getElementById('navLinks');
+        if (nav && navLinks && !nav.contains(e.target)) {
+            navLinks.classList.remove('mobile-open');
+        }
+    });
 });

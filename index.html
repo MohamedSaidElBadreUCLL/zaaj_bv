@@ -7,6 +7,7 @@
     <meta name="description" content="Specialist in tuinafsluitingen. Professionele plaatsing van betonnen en houten omheiningen in heel België. Gratis offerte!">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
     <link rel="icon" type="image/svg+xml" href="fence-icon.svg">
     <link rel="apple-touch-icon" href="fence-icon.svg">
 </head>
@@ -42,7 +43,7 @@
 
             <div class="nav-right">
                 <button class="lang-toggle" onclick="toggleLanguage()" id="langToggle">FR</button>
-                <button class="mobile-menu" onclick="toggleMobileMenu(event)" aria-label="Menu">&#9776;</button>
+                <button class="mobile-menu" onclick="toggleMobileMenu()" aria-label="Menu">&#9776;</button>
             </div>
         </nav>
     </header>
@@ -271,8 +272,7 @@
             <div class="lang-content active" data-lang="nl">
                 <h2>Offerte Aanvraag</h2>
                 <div class="contact-form">
-                    <form id="contactFormNL" action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="c6877ff7-b36c-4752-80b5-3b4300df659b">
+                    <form id="contactFormNL" actype="hidden" name="access_key" value="c6877ff7-b36c-4752-80b5-3b4300df659b">
                         <input type="hidden" name="redirect" value="https://tuinaflsuitingzaaj.com/">
                         <input type="hidden" name="subject" value="Nieuwe aanvraag - Tuinafsluitingen">
                         <div class="form-row">
@@ -420,4 +420,14 @@
             </div>
             <div class="footer-bottom">
                 <div class="lang-content active" data-lang="nl">
-                    <p>&copy; <span class="copyright-year">2026</span> Tuinafsluitingen Zaaj. All rechten voorbehouden
+                    <p>&copy; <span class="copyright-year">2025</span> Tuinafsluitingen Zaaj. Alle rechten voorbehouden.</p>
+                </div>
+                <div class="lang-content" data-lang="fr">
+                    <p>&copy; <span class="copyright-year">2025</span> Clôtures de jardin Zaaj. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
